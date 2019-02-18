@@ -1,0 +1,57 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+     xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="MenuItemFile">Fil</system:String>
+    <system:String x:Key="MenuItemExit">Utgång</system:String>
+    <system:String x:Key="MenuItemLanguage">Språk</system:String>
+    <system:String x:Key="MenuItemInfo">Information</system:String>
+<system:String x:Key="MenuItemOurITservices">Våra IT-tjänster</system:String>
+    <system:String x:Key="MenuItemOurSCSinstallation">Installation av SCS</system:String>
+    <system:String x:Key="MenuItemOurIToutsourcing">IT Outsourcing</system:String>
+    <system:String x:Key="MenuItemOurRemoteITSupport">Fjärr IT Support</system:String>
+    <system:String x:Key="MenuItemOurSoftwareLicensing">licensiering</system:String>
+    <system:String x:Key="MenuItemOur1CEnterprise">1C: Enterprise</system:String>
+    <system:String x:Key="MenuItemOurDesigningITinfrastructure">Design av IT-infrastruktur</system:String>
+    <system:String x:Key="MenuItemOurCCTV_and_access_control">Videoövervakning och åtkomstkontroll</system:String>
+    <system:String x:Key="MenuItemOurAudit_infrastructure">Revisions infrastruktur (IT-Consulting)</system:String>
+    <system:String x:Key="MenuItemVisitWebsite">Webbplats av programmet</system:String>    
+    <system:String x:Key="MessError">Bug</system:String>
+    <system:String x:Key="MessSysytemNameEnc">System kodning namn</system:String>
+    <system:String x:Key="MenuItemInstruction">Instruktioner på YouTube</system:String>
+    <system:String x:Key="MenuItemInstructionToolTip">Video instruktioner om YouTube</system:String>
+    <system:String x:Key="MenuItemSplitAndJoinFile">Skärning och klistra filer</system:String>
+    <system:String x:Key="MenuItemSplitAndJoinFileToolTip">Programmet för att klippa och klistra filer</system:String>
+    <system:String x:Key="MenuItemAbout">om programmet</system:String>
+    <system:String x:Key="TitleMainWindow">Konvertera DBF till MySQL, CSV och XML</system:String>
+    <system:String x:Key="SelectedFilePathButton">Välja DBF</system:String>
+    <system:String x:Key="TextBlockEncodingDBF">Kodnings DBF:</system:String>
+    <system:String x:Key="TextBlockEncodingDBFToolTip">Om DBF-filen kan före text är det viktigt hur man kan koda den spelades in. Välj rätt. Följande tabell ger ett exempel på data i den valda kodningen (om vald källfilen DBF)</system:String>
+    <system:String x:Key="ComboBoxEncodingsToolTip">Systemtextkodning. Du måste välja för din DBF-fil</system:String>
+    <system:String x:Key="del_inc_CheckBox">  * Unload utgår</system:String>
+    <system:String x:Key="TextBlockSaveAs">Spara som:</system:String>
+    <system:String x:Key="GroupBoxHeaderRandomRows">Exempeldata från DBF i den valda kodningen (slumpmässig uppsättning rader)</system:String>
+    <system:String x:Key="GroupBoxHeaderRandomRowsToolTip">Kontrollera hur texten visas</system:String>
+    <system:String x:Key="grdDBFToolTip">För att se detaljer här - välj en fil DBF. För att uppdatera slump datamängd - dubbelklicka på musen</system:String>
+    <system:String x:Key="SaveAsButton">Spara som</system:String>
+    <system:String x:Key="StatusTextDone">Färdig</system:String>
+    <system:String x:Key="MessCantOpenDBF">Det går inte att öppna databasen DBF</system:String>
+    <system:String x:Key="MessCantOpenDBF_Title">Base danyh inte redo</system:String>
+    <system:String x:Key="MessEmptyDataBaseDBF">I de valda databasposter inte</system:String>
+    <system:String x:Key="MessEmptyDataBaseDBFTitle">Databasen är tom</system:String>
+    <system:String x:Key="MessParseCountRows">Bearbetade {0} rader.</system:String>
+    <system:String x:Key="MessParseCountDeletedRows">Borttagna {2} rader.</system:String>
+    <system:String x:Key="MessParseCounSizeOtputFile">  Bildat på fil {1}.</system:String>
+    <system:String x:Key="MessParseDone">Färdig</system:String>
+    <system:String x:Key="MessStatusFileDone">File redo</system:String>
+    <system:String x:Key="MessStatusCountRows">linjer</system:String>
+    <system:String x:Key="MessErrNotSelectDBFFile">Det finns inget att spara. Ange vad * DBF-filen du vill läsa</system:String>
+    <system:String x:Key="MessErrNotSelectDBFFileTitle">Ej vald * .dbf fil</system:String>
+    <system:String x:Key="MessStringFilesInSaveAs">filer</system:String>
+    <system:String x:Key="MessStringAllFilesInSaveAs">Alla filer</system:String>
+    <system:String x:Key="RadioButtonToolTipMySQL">Dumpa MySQL-databas. Lämplig för phpMyAdmin och mysql kommandoraden</system:String>
+    <system:String x:Key="RadioButtonToolTipCSV">Korrekt CSV avgränsas;</system:String>
+    <system:String x:Key="RadioButtonToolTipXML">XML-fil</system:String>
+    <system:String x:Key="MessSaveFileDone">Filen sparas</system:String>
+
+</ResourceDictionary>

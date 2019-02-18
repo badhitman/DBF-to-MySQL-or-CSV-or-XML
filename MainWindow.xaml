@@ -1,0 +1,93 @@
+﻿<Window x:Class="DBF_to_MySQL__CSV_and_XML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Конвертация DBF в MySQL, CSV и XML" MinHeight="350" MinWidth="900" Loaded="Window_Loaded" Icon="Refresh.ico" Closed="Window_Closed">
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu x:Name="My_Top_Menu" Grid.Row="0" Height="24" VerticalAlignment="Center">
+            <MenuItem Height="25" Header="{DynamicResource MenuItemFile}">
+                <MenuItem Header="{DynamicResource MenuItemExit}" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="AlLngItems" Height="25" Header="{DynamicResource MenuItemLanguage}">
+                <MenuItem Header="Русский" Tag="rus" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="English" Tag="eng" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Deutsch" Tag="deu" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Français" Tag="fra" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="简体中国语文" Tag="chi" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="हिंदी" Tag="yid" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Čeština" Tag="cze" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Svenska" Tag="swe" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Español" Tag="spa" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Italiano" Tag="ita" Click="SetLng" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Română" Tag="rum" Click="SetLng" IsCheckable="True"></MenuItem>
+            </MenuItem>
+            <MenuItem Height="25" Header="{DynamicResource MenuItemInfo}">
+                <MenuItem Header="{DynamicResource MenuItemVisitWebsite}" Tag="http://iq-s.pro/%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C?ad" Click="MenuItem_Click_URL_GoTo"></MenuItem>
+                <Separator/>
+                <MenuItem Header="{DynamicResource MenuItemAbout}" Click="MenuItem_Click_1"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1" Height="23">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="115"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SelectedFilePath" IsReadOnly="True" Grid.Column="0"/>
+            <Button x:Name="SelectedFilePathButton" Content="{DynamicResource SelectedFilePathButton}" Grid.Column="1" Click="DBFRefrash_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="105"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="159"></ColumnDefinition>
+                            <ColumnDefinition Width="103"></ColumnDefinition>
+                            <ColumnDefinition Width="115"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource TextBlockEncodingDBF}" ToolTip="{DynamicResource TextBlockEncodingDBFToolTip}" VerticalAlignment="Center" Padding="5,0" Foreground="Blue"></TextBlock>
+                        <ComboBox ToolTip="{DynamicResource ComboBoxEncodingsToolTip}" Grid.Column="1" x:Name="Encodings" Margin="2" Foreground="Blue" SelectionChanged="Encodings_SelectionChanged"/>
+                        <CheckBox x:Name="del_inc_CheckBox" Grid.Column="2" Content="{DynamicResource del_inc_CheckBox}" VerticalAlignment="Center" Foreground="Red" Margin="5,0" IsChecked="True"></CheckBox>
+                        <TextBlock Grid.Column="3" Text="{DynamicResource TextBlockSaveAs}" VerticalAlignment="Center" Foreground="#FF005900" Padding="15,0" TextDecorations="Underline"/>
+                        <RadioButton ToolTip="{DynamicResource RadioButtonToolTipMySQL}" x:Name="MySQLRadioButton" Grid.Column="4" Content="MySQL DUMP" VerticalAlignment="Center" IsChecked="True" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
+                        <RadioButton ToolTip="{DynamicResource RadioButtonToolTipCSV}" x:Name="CSVRadioButton" Grid.Column="5" Content="CSV" VerticalAlignment="Center" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
+                        <RadioButton ToolTip="{DynamicResource RadioButtonToolTipXML}" x:Name="XMLRadioButton" Grid.Column="6" Content="XML" VerticalAlignment="Center" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
+                    </Grid>
+                </Grid>
+            </StackPanel> 
+        </Grid>
+        <Grid Grid.Row="3">
+            <GroupBox Header="{DynamicResource GroupBoxHeaderRandomRows}" ToolTip="{DynamicResource GroupBoxHeaderRandomRowsToolTip}" Margin="2,0" Padding="5">
+                <DataGrid x:Name="grdDBF" ItemsSource="{Binding}" IsReadOnly="True" MouseDoubleClick="grdDBF_MouseDoubleClick" ToolTip="{DynamicResource grdDBFToolTip}"></DataGrid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="111"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="SaveAsButton" Grid.Column="1" Content="{DynamicResource SaveAsButton}" Margin="0,0,5,0" Click="Button_Click"></Button>
+            <StatusBar Grid.Column="0">
+                <StatusBarItem>
+                    <ProgressBar x:Name="myProgressBar"  Width="350" Height="25" Minimum="0" ValueChanged="ProgressBar_ValueChanged"/>
+                </StatusBarItem>
+                <Separator></Separator>
+                <StatusBarItem>
+                    <TextBlock x:Name="StatusText" Tag="{DynamicResource StatusTextDone}" Text="{DynamicResource StatusTextDone}"></TextBlock>
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>

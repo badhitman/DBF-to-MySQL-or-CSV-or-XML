@@ -1,0 +1,58 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+     xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="MenuItemFile">文件</system:String>
+    <system:String x:Key="MenuItemExit">出口</system:String>
+    <system:String x:Key="MenuItemLanguage">语言</system:String>
+    <system:String x:Key="MenuItemInfo">信息</system:String>
+<system:String x:Key="MenuItemOurITservices">我们的IT服务</system:String>
+    <system:String x:Key="MenuItemOurSCSinstallation">安装了 SCS</system:String>
+    <system:String x:Key="MenuItemOurIToutsourcing">IT 外包</system:String>
+    <system:String x:Key="MenuItemOurRemoteITSupport">远程IT支持</system:String>
+    <system:String x:Key="MenuItemOurSoftwareLicensing">许可</system:String>
+    <system:String x:Key="MenuItemOur1CEnterprise">1C： 企业</system:String>
+    <system:String x:Key="MenuItemOurDesigningITinfrastructure">设计IT基础设施</system:String>
+    <system:String x:Key="MenuItemOurCCTV_and_access_control">视频监控和访问控制</system:String>
+    <system:String x:Key="MenuItemOurAudit_infrastructure">审计的基础设施 （IT-咨询）</system:String>
+    <system:String x:Key="MenuItemVisitWebsite">网站上的节目的</system:String>    
+    <system:String x:Key="MessError">错误</system:String>
+    <system:String x:Key="MessSysytemNameEnc">系统编码名称</system:String>
+    <system:String x:Key="MenuItemInstruction">在 YouTube 上的说明</system:String>
+    <system:String x:Key="MenuItemInstructionToolTip">YouTube 上的视频指令</system:String>
+    <system:String x:Key="MenuItemSplitAndJoinFile">剪切和粘贴文件</system:String>
+    <system:String x:Key="MenuItemSplitAndJoinFileToolTip">该计划进行剪切和粘贴文件</system:String>
+    <system:String x:Key="MenuItemAbout">关于该计划</system:String>
+    <system:String x:Key="TitleMainWindow">DBF转换到 MySQL，CSV 和 XML</system:String>
+    <system:String x:Key="SelectedFilePathButton">选择 DBF</system:String>
+    <system:String x:Key="TextBlockEncodingDBF">编码 DBF：</system:String>
+    <system:String x:Key="TextBlockEncodingDBFToolTip">如果 DBF 文件可以存在文字，它是如何被记录到编码是重要的。挑选合适的。下表提供了在所选择的编码的数据的一个例子 （如果选定的源文件 DBF）</system:String>
+    <system:String x:Key="ComboBoxEncodingsToolTip">系统文本编码。你需要选择你的DBF文件</system:String>
+    <system:String x:Key="del_inc_CheckBox"> *卸载删除</system:String>
+    <system:String x:Key="TextBlockSaveAs">另存为：</system:String>
+    <system:String x:Key="GroupBoxHeaderRandomRows">从DBF在选择编码样本数据（随机组行）</system:String>
+    <system:String x:Key="GroupBoxHeaderRandomRowsToolTip">检查文字的显示方式</system:String>
+    <system:String x:Key="grdDBFToolTip">看到这里的细节 - 选择文件DBF。要更新随机数据集 - 双击鼠标</system:String>
+    <system:String x:Key="SaveAsButton">除</system:String>
+    <system:String x:Key="StatusTextDone">准备</system:String>
+    <system:String x:Key="MessCantOpenDBF">无法打开DBF数据库</system:String>
+    <system:String x:Key="MessCantOpenDBF_Title">基地danyh没有准备好</system:String>
+    <system:String x:Key="MessEmptyDataBaseDBF">在选择数据库记录不</system:String>
+    <system:String x:Key="MessEmptyDataBaseDBFTitle">该数据库是空的</system:String>
+    <system:String x:Key="MessParseCountRows">处理{0}行。</system:String>
+    <system:String x:Key="MessParseCountDeletedRows">删除{2}行。</system:String>
+    <system:String x:Key="MessParseCounSizeOtputFile"> 形成文件{1}。</system:String>
+    <system:String x:Key="MessParseDone">处理完毕</system:String>
+    <system:String x:Key="MessStatusFileDone">文件准备</system:String>
+    <system:String x:Key="MessStatusCountRows">线</system:String>
+    <system:String x:Key="MessErrNotSelectDBFFile">没有什么保存。表明你想读什么* .dbf 文件</system:String>
+    <system:String x:Key="MessErrNotSelectDBFFileTitle">未选择* .dbf文件</system:String>
+    <system:String x:Key="MessStringFilesInSaveAs">档</system:String>
+    <system:String x:Key="MessStringAllFilesInSaveAs">所有文件</system:String>
+    <system:String x:Key="RadioButtonToolTipMySQL">转储MySQL数据库。适合 phpMyAdmin 的和 mysql 命令行</system:String>
+    <system:String x:Key="RadioButtonToolTipCSV">正确的 CSV 分隔;</system:String>
+    <system:String x:Key="RadioButtonToolTipXML">XML 文件</system:String>
+    <system:String x:Key="MessSaveFileDone">该文件被保存</system:String>
+
+
+</ResourceDictionary>
