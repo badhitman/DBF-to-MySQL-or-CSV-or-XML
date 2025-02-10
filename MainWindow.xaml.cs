@@ -15,7 +15,7 @@ public partial class MainWindow : Window
 {
     private delegate void SaveFileDelegate(string FileOutputName, string type_file, bool inc_del, Action<int, string> UpdateStatus);
     SaveFileDelegate SaveFileDelegateObj;
-    string curr_ext_file = "mysql";
+    string curr_ext_file = "my.sql";
     public MainWindow()
     {
         InitializeComponent();
@@ -158,7 +158,7 @@ public partial class MainWindow : Window
     {
         curr_ext_file = ((System.Windows.Controls.RadioButton)sender).Content.ToString().ToLower();
         if (curr_ext_file.ToLower() == MySQLRadioButton.Content.ToString().ToLower())
-            curr_ext_file = "mysql";
+            curr_ext_file = "my.sql";
     }
     private void UpdateStatus(int curr_row, string info)
     {
