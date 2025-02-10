@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">filer</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">Alla filer</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">Dumpa MySQL-databas. Lämplig för phpMyAdmin och mysql kommandoraden</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">Korrekt CSV avgränsas;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">XML-fil</system:String>
     <system:String x:Key="MessSaveFileDone">Filen sparas</system:String>

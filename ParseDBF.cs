@@ -256,7 +256,7 @@ public class ParseDBF
     {
         string table_name = "table_" + new System.Text.RegularExpressions.Regex(@"\W").Replace(System.IO.Path.GetFileName(FileOutputName), "_");
         type_file = type_file.ToLower();
-        if (type_file != "sql" && type_file != "csv" && type_file != "xml")
+        if (type_file != "mysql" && type_file != "csv" && type_file != "xml")
         {
             System.Windows.MessageBox.Show(OwnerWin, "Не известный тип сохраняемого файла", "Ошибка");
             return;
@@ -267,7 +267,7 @@ public class ParseDBF
         bw = new BinaryWriter(my_stream);
         switch (type_file)
         {
-            case "sql":
+            case "mysql":
                 bw.Write(g.StringToByte(
                 "-- DBF - conversion  into XML, SQL, CSV, ..." + "\n" +
                 "-- " + g.preficsBildProgramm + "\n" +
@@ -336,7 +336,7 @@ public class ParseDBF
                         }
                         break;
                     case 'C':
-                        if (type_file == "sql")
+                        if (type_file == "mysql")
                             s_row[fieldIndex] = "'" + g.MySQLEscape(CurrEnc.GetString(readed_data_tmp)) + "'";
                         else if (type_file == "csv")
                             s_row[fieldIndex] = g.CSVEscape(CurrEnc.GetString(readed_data_tmp));
@@ -409,7 +409,7 @@ public class ParseDBF
         FlushData(type_file, table_name);
         switch (type_file)
         {
-            case "sql":
+            case "mysql":
                 //bw.Write(g.StringToByte("\n\n" + "/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;" + "\n" +
                 //"/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;" + "\n" +
                 //"/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;"));
@@ -429,13 +429,13 @@ public class ParseDBF
     {
         if (data_list.Count == 0)
             return;
-        if (type_file == "sql")
+        if (type_file == "mysql")
             bw.Write(g.StringToByte("INSERT INTO `" + table_name + "` (" + fields_as_string_for_insert + ") VALUES\n"));
         int data_list_count = data_list.Count;
         foreach (string[] s in data_list)
         {
             data_list_count--;
-            if (type_file == "sql")
+            if (type_file == "mysql")
                 Write(s, ", ", "(", ")" + (data_list_count == 0 ? ";" : ","));
             else if (type_file == "csv")
                 Write(s, ";", "", "");

@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">फ़ाइलें</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">सभी फाइलें</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">MySQL डाटाबेस डाल दो। PhpMyAdmin और MySQL कमांड लाइन के लिए उपयुक्त</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">सही सीएसवी सीमांकित;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">एक्सएमएल फ़ाइल</system:String>
     <system:String x:Key="MessSaveFileDone">फ़ाइल सहेजा जाता है</system:String>

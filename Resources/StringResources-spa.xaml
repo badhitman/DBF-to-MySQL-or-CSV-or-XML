@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">archivos</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">Todos los archivos</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">Volcar la base de datos MySQL. Adecuado para PhpMyAdmin y línea de comandos mysql</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">CSV correcta delimitado;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">Archivo XML</system:String>
     <system:String x:Key="MessSaveFileDone">Se guarda el archivo</system:String>

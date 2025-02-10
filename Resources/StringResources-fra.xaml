@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">fichiers</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">Tous les fichiers</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">Dump base de données MySQL. Convient pour phpMyAdmin et MySQL en ligne de commande</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">Corriger CSV délimité ;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">Fichier XML</system:String>
     <system:String x:Key="MessSaveFileDone">Le fichier est enregistré</system:String>

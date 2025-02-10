@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">档</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">所有文件</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">转储MySQL数据库。适合 phpMyAdmin 的和 mysql 命令行</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">正确的 CSV 分隔;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">XML 文件</system:String>
     <system:String x:Key="MessSaveFileDone">该文件被保存</system:String>

@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">soubory</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">Všechny soubory</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">Dump MySQL databáze. Vhodné pro phpMyAdmin a mysql příkazového řádku</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">Správné CSV vymezeny ;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">Soubor XML</system:String>
     <system:String x:Key="MessSaveFileDone">Soubor je uložen</system:String>

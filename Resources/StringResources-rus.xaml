@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">файлы</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">Все файлы</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">Дамп MySQL базы данных. Подходит для PhpMyAdmin и mysql command-line</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">Дамп PostgreSQL базы данных</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">Корректный CSV с разделителями ;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">Файл XML</system:String>
     <system:String x:Key="MessSaveFileDone">Файл сохранён</system:String>

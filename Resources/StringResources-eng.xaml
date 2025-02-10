@@ -50,6 +50,7 @@
     <system:String x:Key="MessStringFilesInSaveAs">files</system:String>
     <system:String x:Key="MessStringAllFilesInSaveAs">All files</system:String>
     <system:String x:Key="RadioButtonToolTipMySQL">Dump MySQL database. Suitable for PhpMyAdmin and mysql command-line</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
     <system:String x:Key="RadioButtonToolTipCSV">Correct CSV delimited ;</system:String>
     <system:String x:Key="RadioButtonToolTipXML">XML file</system:String>
     <system:String x:Key="MessSaveFileDone">The file is saved</system:String>

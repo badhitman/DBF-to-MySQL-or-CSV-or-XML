@@ -15,23 +15,22 @@ public static class g
             delegate (System.Text.RegularExpressions.Match match)
             {
                 string v = match.Value;
-                switch (v)
+                return v switch
                 {
-                    case "\x00":            // ASCII NUL (0x00) character
-                        return "\\0";
-                    case "\b":              // BACKSPACE character
-                        return "\\b";
-                    case "\n":              // NEWLINE (linefeed) character
-                        return "\\n";
-                    case "\r":              // CARRIAGE RETURN character
-                        return "\\r";
-                    case "\t":              // TAB
-                        return "\\t";
-                    case "\u001A":          // Ctrl-Z
-                        return "\\Z";
-                    default:
-                        return "\\" + v;
-                }
+                    // ASCII NUL (0x00) character
+                    "\x00" => "\\0",
+                    // BACKSPACE character
+                    "\b" => "\\b",
+                    // NEWLINE (linefeed) character
+                    "\n" => "\\n",
+                    // CARRIAGE RETURN character
+                    "\r" => "\\r",
+                    // TAB
+                    "\t" => "\\t",
+                    // Ctrl-Z
+                    "\u001A" => "\\Z",
+                    _ => "\\" + v,
+                };
             });
     }
     public static ModifyRegistry RegManager;

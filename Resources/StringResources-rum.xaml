@@ -49,8 +49,9 @@
 	<system:String x:Key="MessErrNotSelectDBFFileTitle">Nu selectat fișier * .dbf</system:String>
 	<system:String x:Key="MessStringFilesInSaveAs">fișiere</system:String>
 	<system:String x:Key="MessStringAllFilesInSaveAs">Toate fișierele</system:String>
-	<system:String x:Key="RadioButtonToolTipMySQL">Dump baza de date MySQL. Potrivit pentru PhpMyAdmin și mysql linie de comandă</system:String>
-	<system:String x:Key="RadioButtonToolTipCSV">CSV corect delimitate;</system:String>
+    <system:String x:Key="RadioButtonToolTipMySQL">Dump baza de date MySQL. Potrivit pentru PhpMyAdmin și mysql linie de comandă</system:String>
+    <system:String x:Key="RadioButtonToolTipPostgreSQL">PostgreSQL</system:String>
+    <system:String x:Key="RadioButtonToolTipCSV">CSV corect delimitate;</system:String>
 	<system:String x:Key="RadioButtonToolTipXML">Fișier XML</system:String>
 	<system:String x:Key="MessSaveFileDone">Fișierul este salvat</system:String>
 </ResourceDictionary>
