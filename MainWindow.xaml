@@ -56,19 +56,17 @@
                             <ColumnDefinition Width="65"></ColumnDefinition>
                             <ColumnDefinition Width="65"></ColumnDefinition>
                             <ColumnDefinition Width="65"></ColumnDefinition>
-                            <ColumnDefinition Width="65"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="{DynamicResource TextBlockEncodingDBF}" ToolTip="{DynamicResource TextBlockEncodingDBFToolTip}" VerticalAlignment="Center" Padding="5,0" Foreground="Blue"></TextBlock>
                         <ComboBox ToolTip="{DynamicResource ComboBoxEncodingsToolTip}" Grid.Column="1" x:Name="Encodings" Margin="2" Foreground="Blue" SelectionChanged="Encodings_SelectionChanged"/>
                         <CheckBox x:Name="del_inc_CheckBox" Grid.Column="2" Content="{DynamicResource del_inc_CheckBox}" VerticalAlignment="Center" Foreground="Red" Margin="5,0" IsChecked="True"></CheckBox>
                         <TextBlock Grid.Column="3" Text="{DynamicResource TextBlockSaveAs}" VerticalAlignment="Center" Foreground="#FF005900" Padding="15,0" TextDecorations="Underline"/>
                         <RadioButton ToolTip="{DynamicResource RadioButtonToolTipMySQL}" x:Name="MySQLRadioButton" Grid.Column="4" Content="MySQL" VerticalAlignment="Center" IsChecked="True" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
-                        <RadioButton ToolTip="{DynamicResource RadioButtonToolTipPostgreSQL}" x:Name="PostgreSQLRadioButton" Grid.Column="5" Content="Postgre" VerticalAlignment="Center" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
+                        <RadioButton ToolTip="{DynamicResource RadioButtonToolTipXML}" x:Name="XMLRadioButton" Grid.Column="5" Content="XML" VerticalAlignment="Center" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
                         <RadioButton ToolTip="{DynamicResource RadioButtonToolTipCSV}" x:Name="CSVRadioButton" Grid.Column="6" Content="CSV" VerticalAlignment="Center" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
-                        <RadioButton ToolTip="{DynamicResource RadioButtonToolTipXML}" x:Name="XMLRadioButton" Grid.Column="7" Content="XML" VerticalAlignment="Center" Padding="5,0" Foreground="#FF008900" Checked="RadioButton_Checked"></RadioButton>
                     </Grid>
                 </Grid>
-            </StackPanel> 
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
             <GroupBox Header="{DynamicResource GroupBoxHeaderRandomRows}" ToolTip="{DynamicResource GroupBoxHeaderRandomRowsToolTip}" Margin="2,0" Padding="5">

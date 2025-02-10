@@ -429,6 +429,7 @@ public class ParseDBF
     {
         if (data_list.Count == 0)
             return;
+
         if (type_file == "mysql")
             bw.Write(g.StringToByte("INSERT INTO `" + table_name + "` (" + fields_as_string_for_insert + ") VALUES\n"));
         int data_list_count = data_list.Count;
