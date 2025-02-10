@@ -6,7 +6,7 @@
     <system:String x:Key="MenuItemExit">出口</system:String>
     <system:String x:Key="MenuItemLanguage">语言</system:String>
     <system:String x:Key="MenuItemInfo">信息</system:String>
-<system:String x:Key="MenuItemOurITservices">我们的IT服务</system:String>
+    <system:String x:Key="MenuItemOurITservices">我们的IT服务</system:String>
     <system:String x:Key="MenuItemOurSCSinstallation">安装了 SCS</system:String>
     <system:String x:Key="MenuItemOurIToutsourcing">IT 外包</system:String>
     <system:String x:Key="MenuItemOurRemoteITSupport">远程IT支持</system:String>
@@ -15,7 +15,7 @@
     <system:String x:Key="MenuItemOurDesigningITinfrastructure">设计IT基础设施</system:String>
     <system:String x:Key="MenuItemOurCCTV_and_access_control">视频监控和访问控制</system:String>
     <system:String x:Key="MenuItemOurAudit_infrastructure">审计的基础设施 （IT-咨询）</system:String>
-    <system:String x:Key="MenuItemVisitWebsite">网站上的节目的</system:String>    
+    <system:String x:Key="MenuItemVisitWebsite">网站上的节目的</system:String>
     <system:String x:Key="MessError">错误</system:String>
     <system:String x:Key="MessSysytemNameEnc">系统编码名称</system:String>
     <system:String x:Key="MenuItemInstruction">在 YouTube 上的说明</system:String>

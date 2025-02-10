@@ -69,7 +69,7 @@ namespace DBF_to_MySQL__CSV_and_XML
             string curr_name_enc = g.RegManager.Read("last_encoding", "");
             foreach (EncodingInfo ei in Encoding.GetEncodings())
             {
-                Encodings.Items.Add(new exComboBoxItem(ei.DisplayName, ei.Name));
+                Encodings.Items.Add(new ExComboBoxItem(ei.DisplayName, ei.Name));
                 if (ei.Name == curr_name_enc)
                     Encodings.SelectedIndex = Encodings.Items.Count - 1;
             }

@@ -3,15 +3,14 @@
 ////////////////////////////////////////////////
 using System.Windows.Controls;
 
-namespace DBF_to_MySQL__CSV_and_XML
+namespace DBF_to_MySQL__CSV_and_XML;
+
+class ExComboBoxItem : ComboBoxItem
 {
-    class exComboBoxItem : ComboBoxItem
+    public ExComboBoxItem(string Content, string SysName)
     {
-        public exComboBoxItem(string Content, string SysName)
-        {
-            this.Content = Content;
-            this.ToolTip = g.dict["MessSysytemNameEnc"].ToString() + ": " + SysName;
-            this.Tag = SysName;
-        }
+        this.Content = Content;
+        ToolTip = g.dict["MessSysytemNameEnc"].ToString() + ": " + SysName;
+        Tag = SysName;
     }
 }
