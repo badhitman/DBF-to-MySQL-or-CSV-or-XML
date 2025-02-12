@@ -90,7 +90,7 @@ public partial class MainWindow : Window
             return;
         try
         {
-            ParseDBF my_parser = new ParseDBF(SelectedFilePath.Text, Encoding.GetEncoding(((ComboBoxItem)Encodings.SelectedItem).Tag.ToString()), this);
+            ParseDBF my_parser = new(SelectedFilePath.Text, Encoding.GetEncoding(((ComboBoxItem)Encodings.SelectedItem).Tag.ToString()), this);
             if (!my_parser.DataBaseDone)
             {
                 my_parser.Close();
@@ -110,7 +110,7 @@ public partial class MainWindow : Window
     }
     private void Encodings_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        g.RegManager.Write("last_encoding", ((ComboBoxItem)(Encodings.SelectedItem)).Tag.ToString());
+        g.RegManager.Write("last_encoding", ((ComboBoxItem)Encodings.SelectedItem).Tag.ToString());
         ReloadDT();
     }
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -121,7 +121,7 @@ public partial class MainWindow : Window
             SelectedFilePathButton.Focus();
             return;
         }
-        Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog
+        Microsoft.Win32.SaveFileDialog sfd = new()
         {
             AddExtension = true,
             //sfd.CheckFileExists = true;
@@ -218,6 +218,7 @@ public partial class MainWindow : Window
         foreach (System.Windows.Controls.MenuItem i in AlLngItems.Items)
             if (i != item)
                 i.IsChecked = false;
+
         g.dict = [];
         try
         {
@@ -228,8 +229,8 @@ public partial class MainWindow : Window
         {
             g.dict.Source = new Uri("..\\Resources\\StringResources-eng.xaml", UriKind.Relative);
         }
-        this.Resources.MergedDictionaries.Clear();
-        this.Resources.MergedDictionaries.Add(g.dict);
+        Resources.MergedDictionaries.Clear();
+        Resources.MergedDictionaries.Add(g.dict);
         Title = g.dict["TitleMainWindow"].ToString() + " - " + g.preficsBildProgramm;
     }
 
