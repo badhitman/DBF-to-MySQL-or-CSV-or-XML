@@ -89,6 +89,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DBFHeader.cs" />
     <Compile Include="exComboBoxItem.cs" />
     <Compile Include="g.cs" />
     <Compile Include="MainWindow.xaml.cs">

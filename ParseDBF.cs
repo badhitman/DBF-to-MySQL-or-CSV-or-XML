@@ -8,11 +8,10 @@ using System.Text;
 
 namespace DBF_to_MySQL__CSV_and_XML;
 
-public class ParseDBF
+public partial class ParseDBF
 {
     BinaryReader recReader;
     StreamWriter fsWrite;
-    //BinaryWriter bw;
     string number;
     string year;
     string month;
@@ -25,10 +24,51 @@ public class ParseDBF
     MainWindow OwnerWin;
     DataRow row;
     bool _DataBaseDone = false;
-    public bool DataBaseDone { get { if (!_DataBaseDone || !br.BaseStream.CanRead) { System.Windows.MessageBox.Show(g.dict["MessCantOpenDBF"].ToString(), g.dict["MessCantOpenDBF_Title"].ToString()); } return _DataBaseDone; } }
-    public long Length_File { get { if (!DataBaseDone) { return -1; } return ((FileStream)br.BaseStream).Length; } }
-    public int CountRows { get { if (!DataBaseDone) { return -1; } return header.numRecords; } }
-    public bool CanReadNextRow { get { if (!DataBaseDone) { return false; } return cur_num_row < header.numRecords; } }
+
+    public bool DataBaseDone
+    {
+        get
+        {
+            if (!_DataBaseDone || !br.BaseStream.CanRead)
+                System.Windows.MessageBox.Show(g.dict["MessCantOpenDBF"].ToString(), g.dict["MessCantOpenDBF_Title"].ToString());
+
+            return _DataBaseDone;
+        }
+    }
+
+    public long Length_File
+    {
+        get
+        {
+            if (!DataBaseDone)
+                return -1;
+
+            return ((FileStream)br.BaseStream).Length;
+        }
+    }
+
+    public int CountRows
+    {
+        get
+        {
+            if (!DataBaseDone)
+                return -1;
+
+            return header.numRecords;
+        }
+    }
+
+    public bool CanReadNextRow
+    {
+        get
+        {
+            if (!DataBaseDone)
+                return false;
+
+            return cur_num_row < header.numRecords;
+        }
+    }
+
     BinaryReader br = null;
     Stream my_stream;
     byte[] buffer;
@@ -51,27 +91,7 @@ public class ParseDBF
         cur_num_row = 0;
         recReader = null;
     }
-    // This is the file header for a DBF. We do this special layout with everything
-    // packed so we can read straight from disk into the structure to populate it
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
-    private struct DBFHeader
-    {
-        public byte version;
-        public byte updateYear;
-        public byte updateMonth;
-        public byte updateDay;
-        public Int32 numRecords;
-        public Int16 headerLen;
-        public Int16 recordLen;
-        public Int16 reserved1;
-        public byte incompleteTrans;
-        public byte encryptionFlag;
-        public Int32 reserved2;
-        public Int64 reserved3;
-        public byte MDX;
-        public byte language;
-        public Int16 reserved4;
-    }
+
     Encoding CurrEnc;
     private BinaryWriter bw;
     // This is the field descriptor structure. There will be one of these for each column in the table.
@@ -81,12 +101,12 @@ public class ParseDBF
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
         public string fieldName;
         public char fieldType;
-        public Int32 address;
+        public int address;
         public byte fieldLen;
         public byte count;
-        public Int16 reserved1;
+        public short reserved1;
         public byte workArea;
-        public Int16 reserved2;
+        public short reserved2;
         public byte flag;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 7)]
         public byte[] reserved3;
@@ -94,10 +114,10 @@ public class ParseDBF
     }
     public ParseDBF(string dbfFile, Encoding CurrEnc, MainWindow OwnerWin)
     {
-        if ((!File.Exists(dbfFile)))
+        if (!File.Exists(dbfFile))
         {
             _DataBaseDone = false;
-            var v = this.DataBaseDone;
+            _ = DataBaseDone;
             return;
         }
         this.OwnerWin = OwnerWin;
@@ -109,7 +129,7 @@ public class ParseDBF
         handle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
         header = (DBFHeader)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(DBFHeader));
         handle.Free();
-        fields = new ArrayList();
+        fields = [];
         while ((13 != br.PeekChar()))
         {
             buffer = br.ReadBytes(Marshal.SizeOf(typeof(FieldDescriptor)));
@@ -158,7 +178,7 @@ public class ParseDBF
         dt.Rows.Clear();
         long old_file_position = ((FileStream)br.BaseStream).Position;
         ((FileStream)br.BaseStream).Seek(header.headerLen, SeekOrigin.Begin);
-        Random rnd = new Random();
+        Random rnd = new();
         rnd.Next(0, header.numRecords - 1);
         for (int counter = 0; counter <= limit_row; counter++)
         {
@@ -196,14 +216,14 @@ public class ParseDBF
                         year = CurrEnc.GetString(recReader.ReadBytes(4));
                         month = CurrEnc.GetString(recReader.ReadBytes(2));
                         day = CurrEnc.GetString(recReader.ReadBytes(2));
-                        row[fieldIndex] = System.DBNull.Value;
+                        row[fieldIndex] = DBNull.Value;
                         try
                         {
                             if (IsNumber(year) && IsNumber(month) && IsNumber(day))
                             {
-                                if ((Int32.Parse(year) > 1900))
+                                if (int.Parse(year) > 1900)
                                 {
-                                    row[fieldIndex] = new DateTime(Int32.Parse(year), Int32.Parse(month), Int32.Parse(day)).ToString();
+                                    row[fieldIndex] = new DateTime(int.Parse(year), int.Parse(month), int.Parse(day)).ToString();
                                 }
                             }
                         }
@@ -273,7 +293,7 @@ public class ParseDBF
                 "-- " + g.preficsBildProgramm + "\n" +
                 "-- https://sourceforge.net/projects/dbf-to-mysql-csv-xml/" + "\n" +
                 "-- Datetime create dump: " + DateTime.Now.ToString("dd MM yyyy | HH:mm:ss") + "\n" +
-                "" + "\n" +
+                "/*!50503 SET NAMES utf8mb4 */;" + "\n" +
                 "-- --------------------------------------------------------" + "\n" +
                 "-- " + "\n" +
                 "-- `" + table_name + "`\n" +
@@ -354,9 +374,9 @@ public class ParseDBF
                         {
                             if (IsNumber(year) && IsNumber(month) && IsNumber(day))
                             {
-                                if ((Int32.Parse(year) > 1900))
+                                if ((int.Parse(year) > 1900))
                                 {
-                                    s_row[fieldIndex] = "'" + new DateTime(Int32.Parse(year), Int32.Parse(month), Int32.Parse(day)).ToString() + "'";
+                                    s_row[fieldIndex] = "'" + new DateTime(int.Parse(year), int.Parse(month), int.Parse(day)).ToString() + "'";
                                 }
                             }
                         }
@@ -410,9 +430,9 @@ public class ParseDBF
         switch (type_file)
         {
             case "my.sql":
-                //bw.Write(g.StringToByte("\n\n" + "/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;" + "\n" +
-                //"/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;" + "\n" +
-                //"/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;"));
+                bw.Write(g.StringToByte("\n\n" + "/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;" + "\n" +
+                "/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;" + "\n" +
+                "/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;"));
                 break;
             case "xml":
                 bw.Write(g.StringToByte("\t</" + new System.Text.RegularExpressions.Regex(@"\W").Replace(System.IO.Path.GetFileNameWithoutExtension(FileOutputName), "_") + ">"));
@@ -466,7 +486,6 @@ public class ParseDBF
         foreach (FieldDescriptor field in fields)
         {
             string type_data = quote + field.fieldName + quote;
-            //number = CurrEnc.GetString(recReader.ReadBytes(field.fieldLen));
             if (ForCreateTable)
             {
                 switch (field.fieldType)
@@ -531,22 +550,14 @@ public class ParseDBF
 
         foreach (char number in numbers)
         {
-            if ((number >= 48 && number <= 57))
-            {
+            if (number >= 48 && number <= 57)
                 number_count += 1;
-            }
             else if (number == 46)
-            {
                 point_count += 1;
-            }
             else if (number == 32)
-            {
                 space_count += 1;
-            }
             else
-            {
                 return false;
-            }
         }
 
         return (number_count > 0 && point_count < 2);
@@ -555,13 +566,12 @@ public class ParseDBF
     {
         get
         {
-            DataTable empty_dt = new DataTable();
+            DataTable empty_dt = new();
             if (!_DataBaseDone)
                 return empty_dt;
             foreach (DataColumn col in dt.Columns)
-            {
                 empty_dt.Columns.Add(new DataColumn(col.ColumnName, col.DataType));
-            }
+
             return empty_dt;
         }
     }
